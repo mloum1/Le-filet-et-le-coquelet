@@ -30,11 +30,43 @@ body {
 
 main {
 	flex: 1;
+	max-width: 1100px;
+	margin: auto;
+	padding: 30px 80px;
 }
 
 .hero {
 	position: relative;
 	overflow: hidden;
+	padding-top: 60px; /* pour compenser le header fixe */
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+	background-color: rgba(255, 255, 255, 0.85);
+	backdrop-filter: blur(8px);
+	display: flex;
+	justify-content: center;
+	gap: 25px;
+	padding: 12px 20px;
+	font-weight: 600;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+	transition: background 0.3s ease-in-out;
+}
+
+nav a {
+	color: var(--primary-color);
+	text-decoration: none;
+	font-size: 1rem;
+	transition: color 0.3s ease;
+}
+
+nav a:hover {
+	color: var(--accent-color);
 }
 
 .slider {
@@ -113,31 +145,6 @@ main {
 	font-weight: 300;
 }
 
-nav {
-	background-color: white;
-	text-align: center;
-	padding: 15px 0;
-	box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-nav a {
-	margin: 0 15px;
-	text-decoration: none;
-	color: var(--primary-color);
-	font-weight: 600;
-	transition: color 0.3s ease;
-}
-
-nav a:hover {
-	color: var(--secondary-color);
-}
-
-main {
-	max-width: 1100px;
-	margin: auto;
-	padding: 30px 80px;
-}
-
 section {
 	background-color: var(--bg-light);
 	padding: 40px;
@@ -200,6 +207,7 @@ h2 {
 	background-color: #e07a00;
 	transform: translateY(-2px);
 }
+
 footer {
 	position: fixed;
 	bottom: 0;
@@ -213,7 +221,6 @@ footer {
 	background-color: #fff;
 	z-index: 50;
 }
-
 
 /* WhatsApp Chat Button */
 .whatsapp-chat {
