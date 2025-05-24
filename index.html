@@ -10,8 +10,30 @@
 </head>
 <body>
 
-<header>
-	<nav>
+<header class="main-header">
+	<div class="header-container">
+		<div class="left-header">
+			<img src="images/logo.png" alt="Xeet ak Sosé" class="logo" />
+			<button class="menu-toggle" id="menuToggle">&#9776;</button>
+			<nav class="desktop-nav">
+				<a href="#produits">Produits</a>
+				<a href="#abonnements">Abonnements</a>
+				<a href="#apropos">À propos</a>
+				<a href="#contact">Contact</a>
+			</nav>
+		</div>
+		<div class="search-bar">
+			<input type="text" placeholder="Rechercher un produit..." />
+			<button class="search-btn">🔍</button>
+		</div>
+		<div class="right-header">
+			<a href="#">Mes produits</a>
+			<a href="#">0,00 €</a>
+		</div>
+	</div>
+
+	<!-- Navigation mobile -->
+	<nav class="mobile-nav" id="mobileNav">
 		<a href="#produits">Produits</a>
 		<a href="#abonnements">Abonnements</a>
 		<a href="#apropos">À propos</a>
@@ -25,7 +47,6 @@
 			<button id="prev">&#10094;</button>
 			<button id="next">&#10095;</button>
 		</div>
-
 		<div class="slide active">
 			<img src="images/poisson/pecheur-reception.png" alt="Réception chez les pêcheurs">
 			<div class="overlay">
@@ -33,7 +54,6 @@
 				<p>Nous achetons directement à la mer pour plus de fraîcheur et de confiance.</p>
 			</div>
 		</div>
-
 		<div class="slide">
 			<img src="images/poisson/unite-transformation.png" alt="Unité transformation poisson et poulet">
 			<div class="overlay">
@@ -41,7 +61,6 @@
 				<p>Filets de poisson et poulets découpés, préparés et emballés selon les normes modernes.</p>
 			</div>
 		</div>
-
 		<div class="slide">
 			<img src="images/poisson/famille-senegalaise.png" alt="Famille sénégalaise heureuse">
 			<div class="overlay">

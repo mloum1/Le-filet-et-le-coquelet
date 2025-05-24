@@ -2,10 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
 	const slides = document.querySelectorAll(".slide");
 	const nextBtn = document.getElementById("next");
 	const prevBtn = document.getElementById("prev");
+	const menuToggle = document.getElementById("menuToggle");
+	const mobileNav = document.getElementById("mobileNav");
 
 	let currentIndex = 0;
 	let slideInterval;
 
+	// Affiche la diapositive demandée
 	function showSlide(index) {
 		slides.forEach((slide, i) => {
 			slide.classList.remove("active");
@@ -27,6 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		showSlide(currentIndex);
 	}
 
+	function resetInterval() {
+		clearInterval(slideInterval);
+		slideInterval = setInterval(nextSlide, 5000);
+	}
+
 	nextBtn.addEventListener("click", () => {
 		nextSlide();
 		resetInterval();
@@ -37,11 +45,13 @@ document.addEventListener("DOMContentLoaded", () => {
 		resetInterval();
 	});
 
-	function resetInterval() {
-		clearInterval(slideInterval);
-		slideInterval = setInterval(nextSlide, 5000);
-	}
+	// Bouton de menu mobile
+	menuToggle.addEventListener("click", () => {
+		mobileNav.classList.toggle("open");
+		menuToggle.classList.toggle("open");
+	});
 
+	// Lancer le diaporama automatiquement
 	showSlide(currentIndex);
 	slideInterval = setInterval(nextSlide, 5000);
 });
